@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colombianos en el Exterior | Estrenar Vivienda</title>
+
+<style>
+:root{
+  --azul:#1F3C88;
+  --naranja:#F7941D;
+  --gris:#F4F6F9;
+  --texto:#333;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial, sans-serif;color:var(--texto);line-height:1.6;}
+.container{max-width:1200px;margin:auto;padding:0 20px;}
+section{padding:70px 0;}
+h1,h2,h3{color:var(--azul);}
+h2{text-align:center;margin-bottom:40px;font-size:30px}
+
+/* HERO */
+.hero{
+  background:linear-gradient(rgba(31,60,136,.9),rgba(31,60,136,.9)),
+  url('Colombianos en el exterior landing.jpg');
+  background-size:cover;
+  background-position:center;
+  color:white;
+}
+.hero-flex{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.hero-text{max-width:600px;}
+.hero-text h1{font-size:38px;margin-bottom:20px;color:white;}
+.hero-text p{margin-bottom:20px;font-size:17px;}
+
+.form-box{
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  width:360px;
+}
+.form-box input,.form-box select{
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  border:1px solid #ddd;
+  border-radius:6px;
+}
+.btn{
+  background:var(--naranja);
+  border:none;
+  padding:14px;
+  width:100%;
+  color:white;
+  font-weight:bold;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* STATS */
+.stats{
+  background:var(--gris);
+}
+.stats-grid{
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+}
+.stat{text-align:center;}
+.stat-number{
+  font-size:48px;
+  font-weight:bold;
+  color:var(--azul);
+}
+.stat-label{font-size:15px}
+
+/* SERVICES */
+.services-grid{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.service{
+  background:var(--gris);
+  padding:30px;
+  width:280px;
+  border-radius:10px;
+  text-align:center;
+}
+
+/* CITY + SIDEBAR */
+.city-section{
+  display:flex;
+  gap:30px;
+}
+.city-grid{
+  flex:3;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.city{
+  height:220px;
+  border-radius:12px;
+  display:flex;
+  align-items:flex-end;
+  padding:20px;
+  color:white;
+  font-size:22px;
+  font-weight:bold;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  transition:.3s;
+}
+.city:hover{transform:scale(1.05);}
+.city::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.4);
+  border-radius:12px;
+}
+.city span{position:relative;z-index:2;}
+
+.sidebar{
+  flex:1;
+  background:var(--gris);
+  padding:20px;
+  border-radius:10px;
+}
+.sidebar input,.sidebar select{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+/* ALIADOS */
+.banks{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:15px;
+}
+.bank{
+  background:white;
+  padding:15px;
+  text-align:center;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+/* FAQ */
+.faq{background:var(--gris);}
+.faq-item{margin-bottom:10px;}
+.faq-question{
+  background:white;
+  padding:15px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .3s ease;
+  background:white;
+  border-radius:6px;
+  margin-top:5px;
+  padding:0 15px;
+}
+.faq-item.active .faq-answer{
+  max-height:200px;
+  padding:15px;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:#eee;
+}
+
+@media(max-width:992px){
+.city-section{flex-direction:column;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container hero-flex">
+<div class="hero-text">
+<h1>Compra vivienda nueva en Colombia desde el exterior</h1>
+<p>Encuentra proyectos en más de 60 ciudades y recibe asesoría especializada sin viajar.</p>
+</div>
+
+<div class="form-box">
+<input type="text" placeholder="Nombre completo">
+<select>
+<option>Tipo de vivienda</option>
+<option>Apartamento</option>
+<option>Casa</option>
+</select>
+<select>
+<option>Ciudad de interés</option>
+<option>Bogotá</option>
+<option>Medellín</option>
+<option>Cali</option>
+<option>Cartagena</option>
+</select>
+<button class="btn">Buscar</button>
+</div>
+</div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+<div class="container stats-grid">
+<div class="stat"><div class="stat-number" data-target="60">0</div><div class="stat-label">Ciudades</div></div>
+<div class="stat"><div class="stat-number" data-target="30">0</div><div class="stat-label">Constructoras</div></div>
+<div class="stat"><div class="stat-number" data-target="800">0</div><div class="stat-label">Proyectos</div></div>
+<div class="stat"><div class="stat-number" data-target="7">0</div><div class="stat-label">Aliados financieros</div></div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section>
+<div class="container services-grid">
+<div class="service"><h3>Asesoría personalizada</h3><p>Acompañamiento integral.</p></div>
+<div class="service"><h3>Proyectos de vivienda nueva</h3><p>Solo oferta nueva en venta.</p></div>
+<div class="service"><h3>Gestión de crédito hipotecario</h3><p>Aliados financieros especializados.</p></div>
+</div>
+</section>
+
+<!-- CIUDADES -->
+<section>
+<div class="container city-section">
+
+<div class="city-grid">
+<div class="city" style="background-image:url('BOGOTA.png')"><span>Bogotá</span></div>
+<div class="city" style="background-image:url('CALI.png')"><span>Cali</span></div>
+<div class="city" style="background-image:url('MEDELLIN.png')"><span>Medellín</span></div>
+<div class="city" style="background-image:url('SANTA MARTA.jpg')"><span>Santa Marta</span></div>
+<div class="city" style="background-image:url('BUCARAMANGA.png')"><span>Bucaramanga</span></div>
+<div class="city" style="background-image:url('CARTAGENA.jpg')"><span>Cartagena</span></div>
+</div>
+
+<div class="sidebar">
+<h3>¿Cuánto vale este apartamento en tu moneda?</h3>
+<input type="text" value="$850.000.000 COP">
+<select><option>USD</option><option>EUR</option></select>
+<button class="btn">Simular</button>
+</div>
+
+</div>
+</section>
+
+<!-- ALIADOS -->
+<section>
+<div class="container">
+<h2>Bancos aliados</h2>
+<div class="banks" style="margin-bottom:40px;">
+<div class="bank">Bancolombia</div>
+<div class="bank">Banco de Bogotá</div>
+<div class="bank">Davivienda</div>
+<div class="bank">Itaú</div>
+<div class="bank">BBVA</div>
+<div class="bank">Scotiabank</div>
+<div class="bank">Credifamilia</div>
+<div class="bank">Caja Social</div>
+</div>
+
+<h2>Constructoras aliadas</h2>
+<div class="banks">
+<div class="bank">Amarilo</div>
+<div class="bank">Bolívar</div>
+<div class="bank">Colpatria</div>
+<div class="bank">Cusezar</div>
+<div class="bank">Marval</div>
+<div class="bank">Prodesa</div>
+<div class="bank">Arquitectura & Concreto</div>
+<div class="bank">Ospinas</div>
+</div>
+</div>
+</section>
+
+<!-- ARTÍCULOS -->
+<section class="stats">
+<div class="container">
+<h2>Artículos de interés</h2>
+<div class="services-grid">
+<div class="service"><h3>Crédito hipotecario desde el exterior</h3><p>Requisitos y tasas.</p></div>
+<div class="service"><h3>Invertir en Colombia 2026</h3><p>Ciudades con mayor valorización.</p></div>
+<div class="service"><h3>Documentos necesarios</h3><p>Guía paso a paso.</p></div>
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+<div class="container">
+<h2>Todo sobre cómo comprar casa en Colombia desde el exterior</h2>
+
+<div class="faq-item">
+<div class="faq-question">¿Quién es Estrenar Vivienda?</div>
+<div class="faq-answer">Portal especializado en proyectos de vivienda nueva en Colombia.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">¿Cómo puedo financiar?</div>
+<div class="faq-answer">Con bancos aliados que ofrecen crédito a colombianos en el exterior.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">¿Debo viajar a Colombia?</div>
+<div class="faq-answer">No, el proceso puede hacerse 100% remoto.</div>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Estrenar Vivienda
+</footer>
+
+<script>
+// CONTADOR ANIMADO
+const counters=document.querySelectorAll('.stat-number');
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+const counter=entry.target;
+const target=+counter.getAttribute('data-target');
+let count=0;
+const increment=target/100;
+function update(){
+count+=increment;
+if(count<target){
+counter.innerText=Math.floor(count);
+requestAnimationFrame(update);
+}else{
+counter.innerText="+"+target;
+}}
+update();
+observer.unobserve(counter);
+}});
+});
+counters.forEach(counter=>observer.observe(counter));
+
+// FAQ
+document.querySelectorAll(".faq-question").forEach(q=>{
+q.addEventListener("click",()=>{
+q.parentElement.classList.toggle("active");
+});
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
